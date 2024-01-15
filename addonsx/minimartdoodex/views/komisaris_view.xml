@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- res.partner inherit tree view -->
+    <record id="minimartdoodex_komisaris_view_tree_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="gaji"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- res.partner inherit form view -->
+    <record id="minimartdoodex_komisaris_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">            
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="gaji"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="string">No. NPWP</attribute>                
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">1</attribute>                
+            </xpath>
+            
+        </field>
+    </record>
+    <!-- res.partner action window -->
+    <record id="res_partner_doodex_komisaris_action" model="ir.actions.act_window">
+        <field name="name">Dewan Komisaris</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_komisaris_menu_act" 
+            name="Komisaris" 
+            parent="minimartdoodex_menu_root" 
+            action="res_partner_doodex_komisaris_action" 
+            sequence="30"/>
+
+</odoo>

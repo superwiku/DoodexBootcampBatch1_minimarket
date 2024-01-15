@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.karyawan tree view -->
+    <record id="doodex_karyawan_view_tree" model="ir.ui.view">
+        <field name="name">doodex.karyawan.view.tree</field>
+        <field name="model">doodex.karyawan</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nama"/>
+                <field name="gender"/>
+                <field name="alamat"/>
+                <field name="id_karyawan"/>
+                <field name="bagian"/>
+                <field name="gaji"/>
+                <field name="foto" widget="image" class="oe_right oe_avatar"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- doodex.karyawan form view -->
+    <record id="doodex_karyawan_view_form" model="ir.ui.view">
+        <field name="name">doodex.karyawan.view.form</field>
+        <field name="model">doodex.karyawan</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="nama"/>
+                        <field name="gender"/>
+                        <field name="alamat"/>
+                        <field name="id_karyawan"/>
+                        <field name="bagian"/>
+                        <field name="gaji"/>
+                        <field name="foto" widget="image" class="oe_avatar"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodex.karyawan action window -->
+    <record id="doodex_karyawan_action" model="ir.actions.act_window">
+        <field name="name">doodex.karyawan.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.karyawan</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_karyawan_menu_act" 
+            name="Data Karyawan" 
+            parent="minimartdoodex_pegawai_menu_categ" 
+            action="doodex_karyawan_action" 
+            sequence="10"/>
+
+</odoo>

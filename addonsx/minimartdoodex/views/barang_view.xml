@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Menu Item must have a parent and an action -->
+<odoo>
+<!-- doodex.barang tree view -->
+<record id="doodex_barang_view_tree" model="ir.ui.view">
+    <field name="name">doodex.barang.view.tree</field>
+    <field name="model">doodex.barang</field>
+    <field name="arch" type="xml">
+        <tree>
+            <!-- Add your fields here -->
+            <field name="name"/>
+            <field name="nama_barang"/>
+            <field name="harga_modal"/>
+            <field name="harga"/>
+            <field name="stok"/>
+            <field name="deskripsi"/>
+            <field name="jenis"/>
+            <field name="supplier_ids"/>
+        </tree>
+    </field>
+</record>
+
+<!-- doodex.barang form view -->
+<record id="doodex_barang_view_form" model="ir.ui.view">
+    <field name="name">doodex.barang.view.form</field>
+    <field name="model">doodex.barang</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="nama_barang"/>
+                    <field name="harga_modal"/>
+                    <field name="harga"/>
+                    <field name="stok"/>
+                </group>
+                <group name="supplier" string="Supplier">
+                    <field name="supplier_ids" widget="many2many_tags"/>
+                </group>
+                <notebook>
+                    <page name="deskripsi" string="Deskripsi">
+                        <field name="deskripsi"/>
+                    </page>
+                    <page name="jenis" string="Jenis">
+                        <field name="jenis"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+<!-- doodex.barang action window -->
+<record id="doodex_barang_action" model="ir.actions.act_window">
+    <field name="name">Daftar Barang</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">doodex.barang</field>
+    <field name="view_mode">tree,form</field>
+</record>
+    
+<menuitem id="minimartdoodex_barang_menu_act" 
+    name="Daftar Barang" 
+    parent="minimartdoodex_barang_menu_categ" 
+    action="doodex_barang_action" 
+    sequence="10"/>
+</odoo>
+
+

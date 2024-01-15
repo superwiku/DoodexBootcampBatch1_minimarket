@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+<menuitem id="minimartdoodex_menu_root" 
+    name="Minimart Doodex" 
+    sequence="10"/>
+
+<!-- This Menu Item Must have a parent -->
+<menuitem id="minimartdoodex_barang_menu_categ" 
+    name="Daftar Barang" 
+    parent="minimartdoodex_menu_root" 
+    sequence="15"/>   
+
+<!-- This Menu Item Must have a parent -->
+<menuitem id="minimartdoodex_pegawai_menu_categ" 
+    name="Pegawai" 
+    parent="minimartdoodex_menu_root" 
+    sequence="10"/>
+
+<!-- This Menu Item Must have a parent -->
+<menuitem id="minimartdoodex_pelanggan_menu_categ" 
+    name="Pelanggan" 
+    parent="minimartdoodex_menu_root" 
+    sequence="15"/>
+
+<!-- This Menu Item Must have a parent -->
+<menuitem id="minimartdoodex_penjualan_menu_categ" 
+    name="Penjualan" 
+    parent="minimartdoodex_menu_root" 
+    sequence="20"/>
+
+<!-- This Menu Item Must have a parent -->
+<menuitem id="minimartdoodex_supplier_menu_categ" 
+    name="Supplier" 
+    parent="minimartdoodex_menu_root" 
+    sequence="25"/>
+
+</odoo>
+
+

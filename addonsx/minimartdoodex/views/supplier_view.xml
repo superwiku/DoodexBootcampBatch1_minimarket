@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.supplier tree view -->
+    <record id="doodex_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Supplier</field>
+        <field name="model">doodex.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="alamat"/>
+                <field name="telp"/>
+                <field name="cp"/>
+                <field name="barang_ids"/>
+            </tree>
+        </field>
+    </record>
+    <!-- doodex.supplier form view -->
+    <record id="doodex_supplier_view_form" model="ir.ui.view">
+        <field name="name">Form Supplier</field>
+        <field name="model">doodex.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="alamat"/>
+                        <field name="telp"/>
+                        <field name="cp"/>
+                    </group>
+                </sheet>
+                <sheet>    
+                    <group name="barang" string="Daftar Barang">
+                        <field name="barang_ids" widget="many2many_tags"/>                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodex.supplier action window -->
+    <record id="doodex_supplier_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_supplier_menu_act" 
+            name="Daftar Supplier" 
+            parent="minimartdoodex_supplier_menu_categ" 
+            action="doodex_supplier_action" 
+            sequence="5"/>
+
+</odoo>

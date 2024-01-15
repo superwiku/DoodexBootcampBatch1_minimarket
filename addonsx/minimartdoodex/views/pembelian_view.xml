@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- doodex.pembelian tree view -->
+<record id="doodex_pembelian_view_tree" model="ir.ui.view">
+    <field name="name">doodex.pembelian.view.tree</field>
+    <field name="model">doodex.pembelian</field>
+    <field name="arch" type="xml">
+        <tree>
+            <!-- Add your fields here -->
+            <field name="name"/>
+            <field name="barang_id"/>
+            <field name="modal"/>
+            <field name="supplier_id"/>
+            <field name="qty_beli"/>
+            <field name="bayar"/>
+        </tree>
+    </field>
+</record>
+<!-- doodex.pembelian form view -->
+<record id="doodex_pembelian_view_form" model="ir.ui.view">
+    <field name="name">doodex.pembelian.view.form</field>
+    <field name="model">doodex.pembelian</field>
+    <field name="arch" type="xml">
+        <form string="">
+            <sheet>
+                <group>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="barang_id"/>
+                    <field name="modal"/>
+                    <field name="supplier_id"/>
+                    <field name="qty_beli"/>
+                    <field name="bayar"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+    <!-- doodex.pembelian action window -->
+    <record id="doodex_pembelian_action" model="ir.actions.act_window">
+        <field name="name">Daftar Pembelian</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.pembelian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_pembelian_menu_act" 
+            name="Pembelian" 
+            parent="minimartdoodex_supplier_menu_categ" 
+            action="doodex_pembelian_action" 
+            sequence="10"/>
+
+</odoo>

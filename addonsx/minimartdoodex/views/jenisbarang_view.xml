@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.jenisbarang tree view -->
+    <record id="doodex_jenisbarang_view_tree" model="ir.ui.view">
+        <field name="name">doodex.jenisbarang.view.tree</field>
+        <field name="model">doodex.jenisbarang</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nama"/>
+                <field name="letak"/>
+                <field name="kode"/>
+            </tree>
+        </field>
+    </record>
+    <!-- doodex.jenisbarang form view -->
+    <record id="doodex_jenisbarang_view_form" model="ir.ui.view">
+        <field name="name">doodex.jenisbarang.view.form</field>
+        <field name="model">doodex.jenisbarang</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="nama"/>
+                        <field name="letak"/>
+                        <field name="kode"/>
+                        <field name="daftarbarang"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodex.jenisbarang action window -->
+    <record id="doodex_jenisbarang_action" model="ir.actions.act_window">
+        <field name="name">Jenis Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.jenisbarang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_jenisbarang_menu_act" 
+        name="Jenis Barang" 
+        parent="minimartdoodex_barang_menu_categ" 
+        action="doodex_jenisbarang_action" 
+        sequence="5"/>
+
+</odoo>

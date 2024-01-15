@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.manusia tree view -->
+    <record id="doodex_manusia_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Manusia</field>
+        <field name="model">doodex.manusia</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nama"/>
+                <field name="gender"/>
+                <field name="alamat"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- doodex.manusia form view -->
+    <record id="doodex_manusia_view_form" model="ir.ui.view">
+        <field name="name">Form Manusia</field>
+        <field name="model">doodex.manusia</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group string="Identitasnya">
+                        <!-- Add your fields here -->
+                        <field name="nama"/>
+                        <field name="gender"/>
+                    </group>                    
+                </sheet>
+                <sheet>
+                    <group name="alamat" string="Alamatnya">
+                        <field name="alamat"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodex.manusia action window -->
+    <record id="doodex_manusia_action" model="ir.actions.act_window">
+        <field name="name">Manusia Doodex</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.manusia</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_manusia_menu_act" 
+     name="Daftar Manusia" 
+     parent="minimartdoodex_pegawai_menu_categ" 
+     action="doodex_manusia_action" 
+     sequence="5"/>
+
+</odoo>
