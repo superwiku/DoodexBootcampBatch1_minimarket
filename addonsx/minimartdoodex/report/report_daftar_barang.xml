@@ -38,6 +38,25 @@
                                 <span t-field="br.stok"/>
                             </div>
                         </div>
+                        <div class="row">
+                        
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Nama Perusahaan</th>
+                                    <th>Alamat</th>
+                                    <th>Contact Person</th>
+                                    <th>No. Telp</th>
+                                </thead>
+                                <t t-foreach="br.supplier_ids" t-as="brs">
+                                    <tr>
+                                        <td><span t-esc="brs.name"/></td>
+                                        <td><span t-esc="brs.alamat"/></td>
+                                        <td><span t-esc="brs.cp"/></td>
+                                        <td><span t-esc="brs.telp"/></td>
+                                    </tr>
+                                </t>
+                            </table>   
+                        </div>
                     </div>
                 </t>
             </t>
