@@ -20,7 +20,7 @@ Long description of module's purpose
     
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product'],
+    'depends': ['base','product','report_xlsx'],
 
     # always loaded
     'data': [
@@ -43,6 +43,8 @@ Long description of module's purpose
         'views/furniture_view.xml',
         'report/report.xml',
         'report/report_daftar_barang.xml',
+        'report/report_jenis_barang.xml',
+        'report/report_penjualan_template.xml',
       
     ],
     # only loaded in demonstration mode

@@ -29,7 +29,7 @@ class DoodexPenjualan(models.Model):
     tgl_transaksi = fields.Datetime(string='Tanggal Transaksi', default=fields.Datetime.now())
     detailpenjualan_ids = fields.One2many(comodel_name='doodex.detailpenjualan', inverse_name='penjualan_id', string='Detail Barang')
     total_bayar = fields.Integer(compute='_compute_total_bayar', string='Total Bayar', store=True)
-    qr_code = fields.Char(compute='_compute_qr_code', string='QR Code')
+    qr_code = fields.Char(compute='_compute_qr_code', string='QR Code', store=True)
     state = fields.Selection([
         ('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')
     ], string='state', readonly=True, default="draft", required=True)

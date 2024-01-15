@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_jenisbarang_template_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="br">    
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>LAPORAN JENIS BARANG</h1>
+                        <div class="row">
+                            <div class="col-4">
+                                Nama Jenis Barang :
+                            </div>
+                            <div class="col-8">
+                                <span t-field="br.nama"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                Kode :
+                            </div>
+                            <div class="col-8">
+                                <span t-field="br.kode"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                Posisi :
+                            </div>
+                            <div class="col-8">
+                                <span t-field="br.letak"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Nama Barang</th>
+                                    <th>Stok</th>
+                                    <th>Harga Modal</th>
+                                    <th>Harga Jual</th>
+                                </thead>
+                                <t t-foreach="br.daftarbarang" t-as="brs">
+                                    <tr>
+                                        <td><span t-esc="brs.nama_barang"/></td>
+                                        <td><span t-esc="brs.stok"/></td>
+                                        <td><span t-esc="brs.harga_modal"/></td>
+                                        <td><span t-esc="brs.harga"/></td>
+                                    </tr>
+                                </t>
+                            </table>   
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+        
+    </template>
+    
+
+</odoo>

@@ -35,6 +35,7 @@
                     <button name="action_done" type="object" string="done" states="confirm" class="btn btn-primary oe_highlight"/>
                     <button name="action_cancel" type="object" string="cancel" states="confirm" confirm="apakah quotation ini akan dicancel?" class="btn btn-danger oe_highlight"/>
                     <button name="action_draft" type="object" string="kembali ke draft" states="cancel" confirm="apakah quotation ini akan diedit?" class="btn btn-info oe_highlight"/>
+                    <button name="%(minimartdoodex.report_penjualan_pdf)d" type="action" icon="fa-print" states="done" string="PRINT" class="btn btn-success"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
                 </header>
                 <sheet>

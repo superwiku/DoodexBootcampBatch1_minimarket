@@ -39,6 +39,14 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-4">
+                                Jenis        :
+                            </div>
+                            <div class="col-8">
+                                <span t-field="br.jenis.nama"/>
+                            </div>
+                        </div>
+                        <div class="row">
                         
                             <table class="table table-striped">
                                 <thead>
