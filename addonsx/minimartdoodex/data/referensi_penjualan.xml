@@ -8,5 +8,13 @@
         <field name="suffix">MD</field>
         <field name="company_id" eval="False"/>
     </record>
+    <record id="seq_ref_penjualan_nonmember" model="ir.sequence">
+        <field name="name">Referensi Penjualan Nonmember</field>
+        <field name="code">referensi.penjualannonmember</field>
+        <field name="prefix">PJ</field>
+        <field name="padding">5</field>
+        <field name="suffix">ND</field>
+        <field name="company_id" eval="False"/>
+    </record>
 
 </odoo>

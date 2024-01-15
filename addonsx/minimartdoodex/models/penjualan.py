@@ -22,8 +22,8 @@ class DoodexPenjualan(models.Model):
         required=True, copy=False, readonly=True,
         default=lambda self: _('New'))
     
-    membership = fields.Boolean(string='Apakah Member?', default=False)
-    nama_nonmember = fields.Many2one(comodel_name='res.partner', string='Id Pelanggan')
+    membership = fields.Boolean(string='Apakah Member?')
+    nama_nonmember = fields.Many2one(comodel_name='res.partner', string='Nama Pelanggan')
     pelanggan_id = fields.Many2one(comodel_name='doodex.pelanggan', string='Id Pelanggan')
     id_member_penjualan = fields.Char(compute='_compute_id_member_penjualan', string='Nama Member')
     tgl_transaksi = fields.Datetime(string='Tanggal Transaksi', default=fields.Datetime.now())
@@ -73,9 +73,13 @@ class DoodexPenjualan(models.Model):
             rec.id_member_penjualan = rec.pelanggan_id.nama
     
     @api.model
-    def create(self,vals):
-        if vals.get('referensi', _("New")) == _("New"):                
-           vals['referensi'] = self.env['ir.sequence'].next_by_code('referensi.penjualan') or _("New")         
+    def create(self,vals):        
+        if vals.get('referensi', _("New")) == _("New"):   
+            membership = vals.get('membership',False)
+            if membership == True:            
+                vals['referensi'] = self.env['ir.sequence'].next_by_code('referensi.penjualan') or _("New")    
+            else:
+                vals['referensi'] = self.env['ir.sequence'].next_by_code('referensi.penjualannonmember') or _("New")
         record = super(DoodexPenjualan, self).create(vals)
         return record
 
