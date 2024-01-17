@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.reportpenjualanwz form view -->
+    <record id="doodex_reportpenjualanwz_view_form" model="ir.ui.view">
+        <field name="name">Report Penjualan Wizard</field>
+        <field name="model">doodex.reportpenjualanwz</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="dari_tgl"/>
+                        <field name="ke_tgl"/>
+                    </group>
+                    <footer>
+                        <button name="action_penjualan_report" type="object" string="Print Report" class="btn btn-warning"/>
+                        <button string="Cancel" special="cancel" class="oe_link"/>
+                        
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodex.reportpenjualanwz action window -->
+    <record id="doodex_reportpenjualanwz_action" model="ir.actions.act_window">
+        <field name="name">Report Penjualan Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.reportpenjualanwz</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="doodex_reportpenjualanwz_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_reportpenjualanwz_menu_act" 
+            name="Report Penjualan" 
+            parent="minimartdoodex_penjualan_menu_categ" 
+            action="doodex_reportpenjualanwz_action" 
+            sequence="15"/>
+
+</odoo>

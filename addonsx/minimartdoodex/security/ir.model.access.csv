@@ -8,4 +8,8 @@ access_doodex_penjualan,access.doodex.penjualan,model_doodex_penjualan,,1,1,1,1
 access_doodex_detailpenjualan,access.doodex.detailpenjualan,model_doodex_detailpenjualan,,1,1,1,1
 access_doodex_supplier,access.doodex.supplier,model_doodex_supplier,,1,1,1,1
 access_doodex_pembelian,access.doodex.pembelian,model_doodex_pembelian,,1,1,1,1
+access_doodex_stokopname,access.doodex.stokopname,model_doodex_stokopname,,1,1,1,1
+access_doodex_detailstokopname,access.doodex.detailstokopname,model_doodex_detailstokopname,,1,1,1,1
+access_doodex_reportpenjualanwz,access.doodex.reportpenjualanwz,model_doodex_reportpenjualanwz,,1,1,1,1
+
 

@@ -14,3 +14,4 @@ from . import purchasing
 from . import promosi
 from . import manusiax
 from . import furniture
+from . import stokopname

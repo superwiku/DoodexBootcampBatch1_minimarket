@@ -1,22 +1,18 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http, models, fields
+from odoo.http import request
+import json
 
-
-# class Minimartdoodex(http.Controller):
-#     @http.route('/minimartdoodex/minimartdoodex', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
-
-#     @http.route('/minimartdoodex/minimartdoodex/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('minimartdoodex.listing', {
-#             'root': '/minimartdoodex/minimartdoodex',
-#             'objects': http.request.env['minimartdoodex.minimartdoodex'].search([]),
-#         })
-
-#     @http.route('/minimartdoodex/minimartdoodex/objects/<model("minimartdoodex.minimartdoodex"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('minimartdoodex.object', {
-#             'object': obj
-#         })
-
+class MinimartDoodexHttp(http.Controller):
+    @http.route('/api/getbarang', auth='public', method=['GET'])
+    def getBarang(self, **kw):
+        barang = request.env['doodex.barang'].search([])
+        isi = []
+        for b in barang:
+            isi.append({
+                'namabarang' : b.nama_barang,
+                'modal' : b.harga_modal,
+                'jual' : b.harga,
+                'stok' : b.stok
+            })
+        return json.dumps(isi)
+    

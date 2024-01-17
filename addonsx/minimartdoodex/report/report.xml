@@ -1,4 +1,24 @@
 <odoo>
+    <record id="report_penjualan_wizard" model="ir.actions.report">
+        <field name="name">Print Laporan Penjualan</field> 
+        <field name="model">doodex.penjualan</field>    
+        <field name="report_type">qweb-pdf</field>  
+        <field name="report_name">minimartdoodex.report_penjualan_wizard_template_pdf</field>  
+        <field name="report_file">minimartdoodex.report_penjualan_wizard_template_pdf</field>  
+        <field name="binding_model_id" ref="model_doodex_penjualan"/>
+        <field name="binding_type">report</field>            
+    </record>
+
+     <record id="report_barang_xlsx" model="ir.actions.report">
+        <field name="name">Print Laporan Barang Xlsx</field> 
+        <field name="model">doodex.barang</field>    
+        <field name="report_type">xlsx</field>  
+        <field name="report_name">minimartdoodex.report_barang_xlsx</field>  
+        <field name="report_file">minimartdoodex.report_barang_xlsx</field>  
+        <field name="binding_model_id" ref="model_doodex_barang"/>
+        <field name="binding_type">report</field>            
+    </record>
+
     <record id="report_barang_pdf" model="ir.actions.report">
         <field name="name">Print Laporan Barang</field> 
         <field name="model">doodex.barang</field>    

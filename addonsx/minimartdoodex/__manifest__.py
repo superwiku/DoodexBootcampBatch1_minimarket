@@ -20,12 +20,19 @@ Long description of module's purpose
     
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product','report_xlsx'],
+    'depends': ['base','product'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'data/referensi_penjualan.xml',
+        'data/referensi_karyawan.xml',
+        'wizzard/reportpenjualanwz_view.xml',
+        'report/report.xml',
+        'report/report_daftar_barang.xml',
+        'report/report_jenis_barang.xml',
+        'report/report_penjualan_template.xml',
+        'report/report_penjualan_wizard_temp.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/menu.xml',
@@ -41,10 +48,8 @@ Long description of module's purpose
         'views/pembelian_view.xml',
         'views/komisaris_view.xml',
         'views/furniture_view.xml',
-        'report/report.xml',
-        'report/report_daftar_barang.xml',
-        'report/report_jenis_barang.xml',
-        'report/report_penjualan_template.xml',
+        'views/stokopname_view.xml',
+        
       
     ],
     # only loaded in demonstration mode
