@@ -6,8 +6,7 @@ class ReportPenjualanWz(models.TransientModel):
 
     dari_tgl = fields.Date(string='dari Tanggal', required=True)
     ke_tgl = fields.Date(string='ke Tanggal', required=True)
-    penjualan_id = fields.Many2one(comodel_name='doodex.penjualan', string='')
-    
+    penjualan_id = fields.Many2one(comodel_name='doodex.penjualan', string='')    
 
     def action_penjualan_report(self):
         laporan = []
@@ -17,7 +16,7 @@ class ReportPenjualanWz(models.TransientModel):
             laporan += [('tgl_transaksi','>=', dari)]
         if ke:
             laporan += [('tgl_transaksi','<=', ke)]
-        print(laporan)
+       
         laporan_jadi = self.env['doodex.penjualan'].search_read(laporan)
         
         data = {

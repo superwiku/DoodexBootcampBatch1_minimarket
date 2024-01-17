@@ -23,7 +23,8 @@
                         <field name="tgl_stokopname"/>
                         <field name="detailstokopname_ids">
                             <tree editable="bottom">
-                                <field name="barang_id"/>
+                                <field name="name"/>
+                                <field name="stok"/>
                                 <field name="check"/>
                                 <field name="catatan"/>
                             </tree>
