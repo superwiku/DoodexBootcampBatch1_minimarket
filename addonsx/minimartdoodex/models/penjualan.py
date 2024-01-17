@@ -105,14 +105,16 @@ class DoodexPenjualan(models.Model):
             a = self.env['doodex.detailpenjualan'].search([('penjualan_id','=',rec.id)])
             print (a)
             for data in a:
-                print(str(data.barang_id.nama_barang)+ " " +str(data.qty))
-                data.barang_id.stok += data.qty
+                if data:
+                    print(str(data.barang_id.nama_barang)+ " " +str(data.qty))
+                    data.barang_id.stok += data.qty
         record = super(DoodexPenjualan, self).write(vals)
         for recc in self:
             b = self.env['doodex.detailpenjualan'].search([('penjualan_id','=',recc.id)])
             for databaru in b:
-                print(str(databaru.barang_id.nama_barang)+ " " +str(databaru.qty))
-                databaru.barang_id.stok -= databaru.qty
+                if databaru in a:
+                    print(str(databaru.barang_id.nama_barang)+ " " +str(databaru.qty))
+                    databaru.barang_id.stok -= databaru.qty
         return record
 
 
