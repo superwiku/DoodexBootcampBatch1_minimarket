@@ -16,6 +16,13 @@ class DoodexKaryawan(models.Model):
                                          ('akunting', 'Akunting'), 
                                          ('kebersihan', 'Kebersihan'),], 
                               required=True)
+    bag = fields.Char(compute='_compute_bag', string='Departemen', store=True)
+    
+    @api.depends('bagian')
+    def _compute_bag(self):
+        for rec in self:
+            rec.bag = str(rec.bagian)
+    
     gaji = fields.Integer(string='Gaji per bulan')
     foto = fields.Binary(string='Foto')
     

@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<record id="doodex_karyawan_akunting_view_tree" model="ir.ui.view">
-        <field name="name">Akunting</field>
+
+     <!-- doodex.karyawan tree view -->
+    <record id="doodex_karyawan_view_tree" model="ir.ui.view">
+        <field name="name">doodex.karyawan.view.tree</field>
         <field name="model">doodex.karyawan</field>
         <field name="arch" type="xml">
             <tree>
+                <!-- Add your fields here -->
                 <field name="ref"/>
                 <field name="nama"/>
                 <field name="gender"/>
                 <field name="alamat"/>
-                <field name="bag"/>
+                <field name="bagian"/>
                 <field name="gaji"/>
                 <field name="foto" widget="image" class="oe_right oe_avatar"/>
             </tree>
         </field>
     </record>
-   
-    <record id="doodex_karyawan_akunting_view_form" model="ir.ui.view">
-        <field name="name">Akunting</field>
+    <!-- doodex.karyawan form view -->
+    <record id="doodex_karyawan_view_form" model="ir.ui.view">
+        <field name="name">doodex.karyawan.view.form</field>
         <field name="model">doodex.karyawan</field>
         <field name="arch" type="xml">
             <form string="">
@@ -28,10 +31,11 @@
                         </h1>
                     </div>
                     <group>
+                        <!-- Add your fields here -->
                         <field name="nama"/>
                         <field name="gender"/>
                         <field name="alamat"/>
-                        <field name="bag"/>
+                        <field name="bagian"/>
                         <field name="gaji"/>
                         <field name="foto" widget="image" class="oe_avatar"/>
                     </group>
@@ -39,36 +43,31 @@
             </form>
         </field>
     </record>
-    
+ 
+    <record id="doodex_karyawan_tree_view2" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="doodex_karyawan_view_tree"/>
+        <field name="act_window_id" ref="doodex_karyawan_action"/>
+    </record>
+
+    <record id="doodex_karyawan_form_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="doodex_karyawan_view_form"/>
+        <field name="act_window_id" ref="doodex_karyawan_action"/>
+    </record>
     <!-- doodex.karyawan action window -->
-    <record id="doodex_karyawan_akunting_action" model="ir.actions.act_window">
-        <field name="name">Daftar Karyawan Akunting</field>
+    <record id="doodex_karyawan_action" model="ir.actions.act_window">
+        <field name="name">doodex.karyawan.action</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">doodex.karyawan</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[('bag','=','akunting')]</field>
-     
     </record>
-    <record id="doodex_karyawan_akunting_tree_view2" model="ir.actions.act_window.view">
-        <field eval="1" name="sequence"/>
-        <field name="view_mode">tree</field>
-        <field name="view_id" ref="doodex_karyawan_akunting_view_tree"/>
-        <field name="act_window_id" ref="doodex_karyawan_akunting_action"/>
-    </record>
-
-    <record id="doodex_karyawan_akunting_form_view2" model="ir.actions.act_window.view">
-        <field eval="2" name="sequence"/>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="doodex_karyawan_akunting_view_form"/>
-        <field name="act_window_id" ref="doodex_karyawan_akunting_action"/>
-    </record>
-
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="minimartdoodex_karyawan_akunting_menu_act" 
-            name="Bagian Akunting" 
+    <menuitem id="doodex_karyawan_menu_act" 
+            name="Karyawan" 
             parent="minimartdoodex_pegawai_menu_categ" 
-            action="doodex_karyawan_akunting_action" 
-            sequence="20"/>
-    
-
+            action="doodex_karyawan_action" 
+            sequence="5"/>
 </odoo>

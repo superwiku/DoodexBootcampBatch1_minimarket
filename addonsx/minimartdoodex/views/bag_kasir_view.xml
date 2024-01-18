@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- doodex.karyawan tree view -->
-    <record id="doodex_karyawan_view_tree" model="ir.ui.view">
-        <field name="name">doodex.karyawan.view.tree</field>
+   
+    <record id="doodex_karyawan_kasir_view_tree" model="ir.ui.view">
+        <field name="name">Kasir</field>
         <field name="model">doodex.karyawan</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- Add your fields here -->
                 <field name="ref"/>
                 <field name="nama"/>
                 <field name="gender"/>
                 <field name="alamat"/>
-                <field name="bagian"/>
+                <field name="bag"/>
                 <field name="gaji"/>
                 <field name="foto" widget="image" class="oe_right oe_avatar"/>
             </tree>
         </field>
     </record>
-
-    <!-- doodex.karyawan form view -->
-    <record id="doodex_karyawan_view_form" model="ir.ui.view">
-        <field name="name">doodex.karyawan.view.form</field>
+   
+    <record id="doodex_karyawan_kasir_view_form" model="ir.ui.view">
+        <field name="name">Kasir</field>
         <field name="model">doodex.karyawan</field>
         <field name="arch" type="xml">
             <form string="">
@@ -31,12 +29,10 @@
                         </h1>
                     </div>
                     <group>
-                     
-                        <!-- Add your fields here -->
                         <field name="nama"/>
                         <field name="gender"/>
                         <field name="alamat"/>
-                        <field name="bagian"/>
+                        <field name="bag"/>
                         <field name="gaji"/>
                         <field name="foto" widget="image" class="oe_avatar"/>
                     </group>
@@ -44,18 +40,34 @@
             </form>
         </field>
     </record>
+   
     <!-- doodex.karyawan action window -->
-    <record id="doodex_karyawan_action" model="ir.actions.act_window">
-        <field name="name">doodex.karyawan.action</field>
+    <record id="doodex_karyawan_kasir_action" model="ir.actions.act_window">
+        <field name="name">Bagian Kasir</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">doodex.karyawan</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('bag','=','kasir')]</field>
+      
+    </record>
+    <record id="doodex_karyawan_kasir_tree_view2" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="doodex_karyawan_kasir_view_tree"/>
+        <field name="act_window_id" ref="doodex_karyawan_kasir_action"/>
+    </record>
+
+    <record id="doodex_karyawan_kasir_form_view2" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="doodex_karyawan_kasir_view_form"/>
+        <field name="act_window_id" ref="doodex_karyawan_kasir_action"/>
     </record>
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="minimartdoodex_karyawan_menu_act" 
-            name="Data Karyawan" 
+    <menuitem id="minimartdoodex_karyawan_kasir_menu_act" 
+            name="Bagian Kasir" 
             parent="minimartdoodex_pegawai_menu_categ" 
-            action="doodex_karyawan_action" 
-            sequence="10"/>
+            action="doodex_karyawan_kasir_action" 
+            sequence="25"/>
 
 </odoo>

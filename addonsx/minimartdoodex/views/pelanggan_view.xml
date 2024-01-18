@@ -25,17 +25,23 @@
         <field name="arch" type="xml">
             <form string="">                
                 <sheet>
-                    <group>
-                        <!-- Add your fields here -->
-                        <field name="nama"/>
-                        <field name="gender"/>
-                        <field name="alamat"/>
-                        <field name="id_member"/>
-                        <field name="tgl_daftar"/>
-                        <field name="total_belanja"/>
-                        <field name="poin"/>
-                        <field name="level"/>
-                    </group>                    
+                    <group col="2">
+                        <group string="DATA">
+                            <!-- Add your fields here -->
+                            <field name="nama"/>
+                            <field name="gender"/>
+                            <field name="alamat"/>
+                            <field name="id_member"/>
+                            <field name="tgl_daftar"/>                           
+                        </group>    
+                        <group string="PEMBELANJAAN">
+                            <field name="total_belanja"/>
+                            <field name="poin"/>
+                            <field name="level"/>
+                        </group>
+                        
+                    </group>
+                                    
                 </sheet>
                 <sheet>
                     <field name="penjualan_ids"/>
@@ -46,7 +52,7 @@
 
     <!-- doodex.pelanggan action window -->
     <record id="doodex_pelanggan_action" model="ir.actions.act_window">
-        <field name="name">doodex.pelanggan.action</field>
+        <field name="name">Pelanggan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">doodex.pelanggan</field>
         <field name="view_mode">tree,form</field>
