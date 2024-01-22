@@ -46,7 +46,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="doodex_stokopname_menu_act" 
         name="Stok Opname" 
-        parent="minimartdoodex_menu_root" 
+        parent="minimartdoodex_barang_menu_categ" 
         action="doodex_stokopname_action" 
         sequence="35"/>
 

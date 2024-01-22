@@ -9,7 +9,7 @@
         <tree>
             <!-- Add your fields here -->
             <button name="%(minimartdoodex.report_barang_pdf)d" type="action" string="Print Laporan Barang" class="btn btn-danger"/>
-            <field name="name"/>
+           
             <field name="nama_barang"/>
             <field name="harga_modal"/>
             <field name="harga"/>
@@ -32,7 +32,7 @@
         </header>
             <sheet>
                 <group>
-                    <field name="name"/>
+                   
                     <field name="nama_barang"/>
                     <field name="harga_modal"/>
                     <field name="harga"/>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodex.barang inherit tree view -->
+    <record id="doodex_barang_view_tree_inherit" model="ir.ui.view">
+        <field name="name">doodex.barang.inherit.view.tree</field>
+        <field name="model">doodex.barang</field>
+        <field name="inherit_id" ref="minimartdoodex.doodex_barang_view_tree"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='deskripsi']" position="after">
+                <field name="expired_time"/>
+            </xpath>
+            <xpath expr="//field[@name='expired_time']" position="after">
+                <field name="expired_date"/>
+            </xpath>
+            <xpath expr="//field[@name='harga']" position="attributes">
+                <attribute name="string">Harga Jual</attribute>>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- doodex.barang inherit form view -->
+    <record id="doodex_barang_view_form_inherit" model="ir.ui.view">
+        <field name="name">doodex.barang.inherit.view.form</field>
+        <field name="model">doodex.barang</field>
+        <field name="inherit_id" ref="minimartdoodex.doodex_barang_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='stok']" position="after">
+                <field name="expired_time"/>
+            </xpath>
+            <xpath expr="//field[@name='expired_time']" position="after">
+                <field name="expired_date"/>
+            </xpath>
+            <xpath expr="//field[@name='harga']" position="attributes">
+                <attribute name="string">Harga Jual</attribute>>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- doodex.barang action window -->
+    <record id="doodex_barang_action" model="ir.actions.act_window">
+        <field name="name">doodex.barang.action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodex.barang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

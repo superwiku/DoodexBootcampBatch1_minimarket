@@ -20,11 +20,12 @@ Long description of module's purpose
     
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product'],
+    'depends': ['base','product','sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/menu.xml',
         'data/referensi_penjualan.xml',
         'data/referensi_karyawan.xml',
         'wizzard/reportpenjualanwz_view.xml',
@@ -34,21 +35,21 @@ Long description of module's purpose
         'report/report_penjualan_template.xml',
         'report/report_penjualan_wizard_temp.xml',
         'views/views.xml',
-        'views/templates.xml',
-        'views/menu.xml',
+        'views/templates.xml',        
         'views/jenisbarang_view.xml',
         'views/barang_view.xml',
         'views/pelanggan_view.xml',
         'views/karyawan_view.xml',
-        'views/bag_kebersihan_view.xml',
-        'views/bag_akunting_view.xml',
-        'views/bag_kasir_view.xml',
         'views/penjualan_view.xml',
         'views/supplier_view.xml',
         'views/pembelian_view.xml',
         'views/komisaris_view.xml',
         'views/furniture_view.xml',
         'views/stokopname_view.xml',
+        'views/bag_kebersihan_view.xml',
+        'views/bag_akunting_view.xml',
+        'views/bag_kasir_view.xml',
+        
         
       
     ],

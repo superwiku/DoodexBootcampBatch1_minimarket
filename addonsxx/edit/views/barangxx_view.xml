@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- doodexedit.barang tree view -->
+    <record id="doodexedit_barang_view_tree" model="ir.ui.view">
+        <field name="name">List Edit Nama</field>
+        <field name="model">doodexedit.barang</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="barang_id"/>
+                <field name="nama_edit"/>
+            </tree>
+        </field>
+    </record>
+    <!-- doodexedit.barang form view -->
+    <record id="doodexedit_barang_view_form" model="ir.ui.view">
+        <field name="name">Form Edit Nama</field>
+        <field name="model">doodexedit.barang</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="barang_id"/>
+                        <field name="nama_edit"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- doodexedit.barang action window -->
+    <record id="doodexedit_barang_action" model="ir.actions.act_window">
+        <field name="name">Edit Nama</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">doodexedit.barang</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="minimartdoodex_barangxx_menu_act" 
+            name="Edit Nama" 
+            parent="minimartdoodex.minimartdoodex_barang_menu_categ" 
+            action="doodexedit_barang_action" 
+            sequence="15"
+            />
+
+</odoo>
